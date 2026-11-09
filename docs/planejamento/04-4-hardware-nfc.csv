@@ -1,0 +1,21 @@
+
+,Hardware NFC — Lista de Compras para PoC,,,,,,,,
+
+,Categoria,Modelo,Especificação,Função,Qtd PoC,Preço Unit. (R$),Total (R$),Fornecedor BR,Compat. StuStaPay
+,Servidor,Intel NUC 13 Pro,"i5-1340P, 16GB DDR5, 512GB NVMe, 2.5GbE",Backend + Postgres + nginx,1,3500,3500,Mercado Livre / Kabum,Validado — Docker roda nativo
+,Servidor (alt.),Beelink SER5 Max,"Ryzen 7 5800H, 32GB, 500GB NVMe",Alternativa mais barata ao NUC,1,2400,2400,AliExpress / Mercado Livre,Validado — Debian 12 OK
+,Tablet PDV,Samsung Galaxy Tab A9+,"11"" 90Hz, 4GB/64GB, Android 13, USB-C 3.2",PDV nas barracas,2,1200,2400,Mercado Livre / Magazine Luiza,Validado — Android 13 + USB-OTG OK
+,Tablet PDV (alt.),Lenovo Tab M11,"11"" 90Hz, 4GB/128GB, Android 14",Alternativa ao Samsung,2,1100,2200,Mercado Livre,Testar — alguns Lenovo limitam OTG
+,Leitor NFC,ACS ACR1222L,"USB, leitura NTAG213/215/216, Mifare, 13.56MHz",Leitura de pulseiras no PDV,2,480,960,Semparar / Mercado Livre (importado),Validado — StuStaPay usa este modelo de referência
+,Leitor NFC (alt.),ACS ACR1281U-C1,"USB, Mifare Classic/Ultralight, NTAG",Alternativa mais barata,2,320,640,AliExpress / Mercado Livre,Testar — driver ACS pode variar
+,Pulseira NFC,NXP NTAG213 (tecido),"144 bytes, 144b memória, UID 7-byte",Identificação do participante,50,8.5,425,Printplast / FuturaTickets / AliExpress,Validado — NTAG213 é o padrão StuStaPay
+,Pulseira NFC (alt.),Mifare Ultralight C,"192 bytes, 3DES",Alternativa com mais memória,50,6,300,AliExpress (importado),"Compatível, mas memória extra não é usada pela PoC"
+,Roteador,MikroTik hAP ax2,"Wi-Fi 6, dual-WAN, 4 portas Gigabit",Gateway do evento + QoS,1,950,950,Mercado Livre / Datacom,Independente do StuStaPay
+,Roteador (alt.),Ubiquiti UDM-Pro,"Wi-Fi 6, dual-WAN, controller integrado",Alternativa enterprise,1,2100,2100,Mercado Livre,Independente do StuStaPay
+,UPS,APC Back-UPS 1500VA,"9 outlets, AVR, autonomia ~30min sob carga média",No-break servidor + roteador,1,850,850,Mercado Livre / Kabum,Independente do StuStaPay
+,Switch,TP-Link TL-SG1005D,5 portas Gigabit unmanaged,Conectar servidor + roteador + UPS monitor,1,120,120,Mercado Livre,Independente do StuStaPay
+,Cabos USB-C OTG,Anker USB-C para USB-A (1m),"USB 3.2, reforçado",Conectar leitor ACR1222L ao tablet,4,35,140,Mercado Livre,Recomendado ter sobressalente por PDV
+,Capa tablet,Capa resistente a impacto Samsung A9+,TPU + vidro temperado,Proteger PDV em barraca,2,80,160,Mercado Livre,Independente do StuStaPay
+,Bateria externa,Anker PowerCore 10000 PD,"10000mAh, 18W PD",Backup de energia PDV,2,180,360,Mercado Livre,Independente do StuStaPay
+,TOTAL PoC (itens recomendados em verde),,,,,,9865,,
+,"Preços em R$ (out/2026), estimados para compras no Brasil. Itens em verde compõem o bundle recomendado da PoC. Linhas cinza são alternativas para contingência ou upgrade. Frete e impostos não incluídos.",,,,,,,

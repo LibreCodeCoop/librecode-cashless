@@ -1,0 +1,32 @@
+
+,Estimativa de Custos — PoC StuStaPay (4 semanas),,,,,,
+
+,Categoria,Item,Descrição,Qtd,Unitário (R$),Total (R$),Observação
+,Hardware,Servidor (NUC ou Beelink),Intel NUC 13 ou Beelink SER5 Max,1,2400,2400,Usar Beelink como custo base; NUC se orçamento permitir.
+,Hardware,Tablet PDV Android,Samsung Galaxy Tab A9+ 64GB,2,1200,2400,2 PDVs: 1 para barraca + 1 para posto de recarga.
+,Hardware,Leitor NFC ACR1222L,"USB, NTAG213 compatível",2,480,960,1 leitor por PDV + 1 sobressalente compartilhado.
+,Hardware,Pulseira NTAG213,"Tecido, 50 unidades (10 ativas + reserva)",50,8.5,425,Compra de lote; algumas sobram para testes.
+,Hardware,Roteador MikroTik hAP ax2,"Dual-WAN, Wi-Fi 6",1,950,950,Independente do StuStaPay.
+,Hardware,UPS APC 1500VA,No-break para servidor + roteador,1,850,850,Independente do StuStaPay.
+,Hardware,Switch Gigabit + cabos,TP-Link 5 portas + cabos USB-C OTG + rede,1,250,250,Bundle de acessórios.
+,Hardware,Capa + bateria externa,Capa tablet × 2 + powerbank × 2,1,520,520,Proteção e autonomia de PDV.
+,Software/Hosting,VPS de backup (opcional),"Hetzner CX22 (2vCPU, 4GB) para dashboards remotos",1,80,80,R$ 80/mês — 1 mês para PoC. Opcional se dashboards remotos não forem necessários.
+,Software/Hosting,Domínio + certificado SSL,Domínio .com.br + Let's Encrypt (grátis),1,50,50,Para acesso remoto ao admin.
+,Software/Hosting,Backup em nuvem,Backblaze B2 50GB,1,5,5,Backup offsite do Postgres.
+,Mão de Obra,Dev Backend Python,4 semanas × 40h × R$ 80/h,160,80,12800,Mercado SP/RJ — pleno/sênior part-time. R$ 12.800 total.
+,Mão de Obra,Dev Android (Kotlin),4 semanas × 20h × R$ 90/h,80,90,7200,Part-time (tradução PT-BR + ajustes de PDV). R$ 7.200 total.
+,Mão de Obra,Ops/DevOps,4 semanas × 20h × R$ 100/h,80,100,8000,"Setup Docker, monitoramento, dia do piloto. R$ 8.000 total."
+,Mão de Obra,QA / Operador evento,4 semanas × 15h × R$ 50/h,60,50,3000,Testes E2E + operação no piloto. R$ 3.000 total.
+,Mão de Obra,PM (part-time),4 semanas × 8h × R$ 120/h,32,120,3840,Coordenação + relatório final. R$ 3.840 total.
+,Operacionais,Internet redundante no piloto,Claro 4G (100GB) + Vivo 4G (50GB),1,150,150,Dual-SIM para o dia do piloto.
+,Operacionais,Energia + infra física,"Extensões, fita, suportes, mesa",1,300,300,Infra da barraca de teste.
+,Operacionais,Coffee / alimentação equipe piloto,Dia do evento-piloto,1,200,200,Equipe de 4 pessoas.
+,Operacionais,Reserva para imprevistos,10% do subtotal de hardware + mão de obra,1,0,4359.5,Calculado abaixo.
+,SUBTOTAL POR CATEGORIA,,,,,,
+,Hardware,—,,,,8755,
+,Software/Hosting,—,,,,135,
+,Mão de Obra,—,,,,34840,
+,Operacionais,—,,,,650,
+,TOTAL GERAL DA PoC,,,,,48739.5,
+,Custo aproximado por participante (10 pulseiras ativas):,,,,,4873.95
+,"Preços em R$ (out/2026), referência SP/RJ. Mão de obra calculada em hora técnica — ajustar conforme região. Custo por participante alto nesta PoC por ser pequena; em rollout de 1000+ pulseiras o custo marginal cai para < R$ 50/participante.",,,,,

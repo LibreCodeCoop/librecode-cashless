@@ -1,0 +1,20 @@
+
+,Riscos e Mitigações — PoC StuStaPay,,,,,,,
+
+,ID,Risco,Categoria,Probabilidade,Impacto,Severidade,Mitigação,Responsável
+,R01,Leitor ACR1222L incompatível com Android 13 no tablet Samsung,Hardware,Média,Alto,Alta,Testar em semana 1 antes de comprar lote. Sobressalente: ACR1281U. Backup: usar tablet Lenovo M11.,Dev Android
+,R02,Wi-Fi cai no dia do piloto e sync falha,Rede,Alta,Médio,Alta,PDV offline-first aguenta. Dual-WAN no roteador. UPS para servidor+roteador. Teste de queda simulado em T3.2.,Ops
+,R03,Backend cai em pico de carga,Software,Média,Alto,Alta,Stress test em T3.4 (50 tx/min × 10min). Monitorar CPU/RAM. Restart automático via Docker restart policy.,Dev Backend + Ops
+,R04,Pulseira perdida/participante sem saldo,Operacional,Alta,Baixo,Média,"Pulseira de reposição vinculada à conta. Saldo associado ao usuário, não à pulseira. Caução opcional.",Operador evento
+,R05,Gap fiscal BR impede uso comercial,Compliance,Alta,Alto,Crítica,Fora do escopo da PoC. Planejar fase 2 com 4–8 semanas para SAT/NF-e. Não vender sem fiscal no Brasil.,PM + Dev Backend
+,R06,Tradução PT-BR incompleta confunde operador,UX,Média,Médio,Média,Focar em 80 chaves críticas (T2.4). Treinar operador em T4.2 com glossário PT-BR/EN. Manual rápido de 1 página.,Dev Android + PM
+,R07,TSE alemão ainda presente no build quebra deploy,Software,Baixa,Alto,Média,Usar flag --without-tse (PR #697 out/2026). Validar em T1.4.,Dev Android
+,R08,Comunidade StuStaPay pequena → demora resposta a bugs,Suporte,Alta,Médio,Alta,Manter fork próprio. Cadastrar issues em paralelo. Orçar 20% do tempo do dev backend para debug.,Dev Backend
+,R09,Database corruption por queda abrupta,Software,Baixa,Crítico,Alta,UPS no servidor. Backup pg_dump a cada 15min. WAL archiving. Teste de restore em T3.3.,Ops
+,R10,"Operador comete erro (recarga errada, produto errado)",Operacional,Alta,Médio,Alta,Confirmação dupla em transações > R$ 50. Estorno via admin web. Log de auditoria por usuário.,QA + Operador
+,R11,Bateria do tablet acaba em meio à operação,Hardware,Média,Médio,Média,Powerbank 10000mAh por PDV. Carregador na barraca. Troca de tablet em 5 min.,Operador
+,R12,Relógio do PDV dessincroniza → conflito de sync,Software,Média,Médio,Média,NTP obrigatório em todos PDVs. Validar em T2.3. Worker de sync resolve por timestamp.,Dev Android + Ops
+,R13,Tradução de 'wristband' como 'pulseira' conflita com 'ticket' no contexto brasileiro,UX,Baixa,Baixo,Baixa,"Glossário validado em T2.4: 'Pulseira' = NFC wearable, 'Ticket' = ingresso QR, 'Cartão' = NFC card.",PM + Dev Android
+,R14,Participante tenta usar a mesma pulseira em dois PDVs simultaneamente,Operacional,Média,Baixo,Média,Saldo consultado em tempo real quando online. Offline: limite de gasto configurável por pulseira (anti-fraude).,Dev Backend
+,R15,Imply processa StuStaPay por similaridade de marca,Legal,Baixa,Alto,Média,StuStaPay é AGPL-3.0 independente. Não usar marca Imply em material. Consultar jurídico se comercializar.,PM + Jurídico
+,Severidade = combinação de Probabilidade × Impacto. Riscos 'Crítica' e 'Alta' exigem mitigação executada antes do piloto (T4.3).,,,,,,

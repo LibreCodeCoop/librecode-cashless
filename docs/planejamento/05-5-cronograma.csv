@@ -1,0 +1,28 @@
+
+,Cronograma da PoC — 4 Semanas (20 dias úteis),,,,,,,,,
+
+,ID,Fase,Tarefa,Responsável,Início (dia),Fim (dia),Duração (dias),Dependências,Status,% Concluído
+,T1.1,Setup Infra,Clonar repo StuStaPay + revisar docs de deploy,Dev Backend,1,1,1,—,Planejado,0
+,T1.2,Setup Infra,Provisionar NUC/Beelink: Ubuntu 22.04 + Docker 24+,Ops/DevOps,1,2,2,—,Planejado,0
+,T1.3,Setup Infra,Subir docker-compose: Postgres + backend + admin web + nginx,Ops/DevOps,2,3,2,T1.2,Planejado,0
+,T1.4,Setup Infra,Build do app Android sem TSE (--without-tse),Dev Android,2,4,3,T1.1,Planejado,0
+,T1.5,Setup Infra,Smoke test: login no admin web + cadastro de produto,QA,4,5,2,T1.3,Planejado,0
+,T2.1,Config + PT-BR,"Configurar produtos, taxas, evento-piloto no admin",Dev Backend,6,7,2,T1.5,Planejado,0
+,T2.2,Config + PT-BR,Cadastrar 10 pulseiras NTAG213 no backend,QA,7,7,1,T2.1,Planejado,0
+,T2.3,Config + PT-BR,Instalar app Android no tablet + parear leitor ACR1222L,Dev Android,6,7,2,T1.4,Planejado,0
+,T2.4,Config + PT-BR,Tradução PT-BR essencial: strings.xml (~80 chaves críticas),Dev Android,7,9,3,T1.4,Planejado,0
+,T2.5,Config + PT-BR,Tradução PT-BR admin web: locale pt-BR.json (~50 chaves),Dev Backend,8,9,2,T1.5,Planejado,0
+,T2.6,Config + PT-BR,Teste E2E: leitura pulseira → cadastro → consulta saldo,QA,10,10,1,"T2.2, T2.3, T2.5",Planejado,0
+,T3.1,Testes,Cenário 1: recarga online + consumo online + reembolso,QA,11,11,1,T2.6,Planejado,0
+,T3.2,Testes,Cenário 2: desligar Wi-Fi → 5 vendas offline → religar → sync,QA + Dev Android,12,12,1,T3.1,Planejado,0
+,T3.3,Testes,Cenário 3: matar backend → reiniciar → validar consistência,QA + Ops,13,13,1,T3.2,Planejado,0
+,T3.4,Testes,Cenário 4: 50 transações/minuto por 10 min → medir latência,QA,14,14,1,T3.3,Planejado,0
+,T3.5,Testes,Cenário 5: dashboard em tempo real (WebSockets) sob carga,QA + Dev Backend,15,15,1,T3.4,Planejado,0
+,T3.6,Testes,Bug bash final + triage de issues antes do piloto,Time todo,15,15,1,T3.5,Planejado,0
+,T4.1,Piloto,Setup físico: 1 barraca + 1 PDV + 10 pulseiras + roteador + UPS,Ops,16,16,1,T3.6,Planejado,0
+,T4.2,Piloto,Briefing com equipe do evento (2 operadores + 1 supervisor),PM,16,16,1,—,Planejado,0
+,T4.3,Piloto,Go-live: 4 horas de operação real com 10 participantes,Time todo,17,17,1,"T4.1, T4.2",Planejado,0
+,T4.4,Piloto,Monitoramento ativo durante evento (dashboards + logs),Ops + Dev Backend,17,17,1,T4.3,Planejado,0
+,T4.5,Piloto,"Pós-mortem: coletar logs, transações, feedback dos operadores",PM + QA,18,19,2,T4.3,Planejado,0
+,T4.6,Piloto,"Relatório final: KPIs atingidos, gaps, recomendação go/no-go",PM,20,20,1,T4.5,Planejado,0
+,Cronograma baseado em 20 dias úteis (4 semanas). Status pode ser editado via dropdown. % Concluído aceita valores 0–100%. Dependências referenciam IDs de tarefas anteriores.,,,,,,,,

@@ -1,0 +1,14 @@
+
+,Topologia de Rede no Evento,,,,,,,
+
+,Nó,Papel,Hardware,Conexão,Banda Estimada,Redundância,Risco de Queda,Mitigação
+,Servidor Central,Backend + Postgres + Redis + nginx + admin web,"Intel NUC 13 (i5, 16GB, 512GB SSD) ou Beelink SER5",Ethernet no roteador principal,Recebe ~5–20 req/s de cada PDV; ~50 KB/s por PDV,Backup PG a cada 15min para SSD externo,Média — ponto único de falha,NUC duplo em hot-standby (fase 2); UPS para aguentar 30min sem força.
+,Roteador Principal,Gateway Wi-Fi + DHCP + isolamento de rede,MikroTik hAP ax2 ou Ubiquiti UDM-Pro,WAN: 4G/5G + fixa (dual-WAN),Total: ~1–5 Mbps para 20 PDVs,Dual-WAN (4G + fixa); failover automático,Baixa,QoS priorizando tráfego backend; VLAN separada para PDVs vs. convidados.
+,PDV Android #1,Barraca de bebida,"Samsung Galaxy Tab A9+ (Android 13, USB-OTG)",Wi-Fi 5GHz no roteador principal,~50 KB/s em pico,Funciona 100% offline; sync ao reconectar,"Alta (movimentação, derramamento)",Capa resistente a impacto; bateria externa 10000mAh; limpeza com álcool.
+,PDV Android #2,Barraca de comida,Samsung Galaxy Tab A9+,Wi-Fi 5GHz,~50 KB/s em pico,Offline-first,Alta,Igual ao PDV #1.
+,PDV Android #3,Posto de recarga (top-up),Samsung Galaxy Tab A9+ + leitor cartão de crédito (opcional),Wi-Fi 5GHz,~100 KB/s (mais transações),Offline-first; saldo só confirmado após sync,Média,Manter lista de recargas offline com assinatura criptográfica.
+,Leitor NFC ACR1222L,Acoplado ao tablet PDV via USB-OTG,"ACR1222L (USB, leitura NTAG213)",USB-OTG (não usa rede),N/A,Leitor sobressalente por barraca,Média (cabo desconecta),Cabos USB-C reforçados; leitor sobressalente na central.
+,Pulseira NTAG213,Identificação do participante,Pulseira tecido + chip NXP NTAG213,NFC 13.56MHz passivo (sem rede),N/A,Estoque de 10% de pulseiras sobressalentes,Média (perda/quebra),Pulseira de reposição vinculada à conta do usuário; taxa de caução.
+,Internet (WAN),"Conectividade com mundo exterior (recarga online, dashboards remotos)",Modem 4G/5G (Claro/Vivo/Operadora B) + fixa (se disponível no local),Dual-WAN no roteador,~10 Mbps (apenas sync e dashboards),Dual-WAN; SIM de duas operadoras,Alta em festivais em locais remotos,Operação offline-first; internet só necessária para recarga online e dashboards remotos.
+,UPS,No-break para servidor e roteador,APC Back-UPS 1500VA ou similar,Elétrica,N/A,Autonomia ~30min,Baixa,Teste semanal; troca de bateria a cada 2 anos.
+,Princípio: PDV offline-first. A única dependência crítica de rede é servidor↔roteador (Ethernet). Queda de internet NÃO derruba as vendas — apenas retarda sync e dashboards remotos.,,,,,,

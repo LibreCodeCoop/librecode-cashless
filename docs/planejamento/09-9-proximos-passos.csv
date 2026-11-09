@@ -1,0 +1,17 @@
+
+,Próximos Passos — Ações Imediatas antes de iniciar a PoC,,,,,
+
+,ID,Ação (Semana 0 — antes da PoC),Responsável,Prazo (dias),Status,Notas
+,S0.1,Clonar repositório github.com/stustapay/stustapay e revisar README + docs de deploy,Dev Backend,1,Planejado,Subcomando: git clone + leitura do docker/all-in-one/README.md
+,S0.2,Definir e aprovar orçamento (R$ 8–12k) com patrocinador do piloto,PM,2,Planejado,Anexar aba 6 (Custos) na proposta
+,S0.3,Comprar 1× NUC/Beelink + 1× tablet Samsung A9+ + 1× ACR1222L + 10× NTAG213,Ops,5,Planejado,Prioridade: leitor + pulseiras (lead time importação 7–15 dias)
+,S0.4,Provisionar VPS de backup (Hetzner CX22 ou equivalente) com Debian 12 + Docker,Ops,1,Planejado,Apenas se dashboards remotos forem necessários
+,S0.5,"Recrutar 1 dev backend Python (4 sem, part-time 40h/sem) e 1 dev Android (20h/sem)",PM,5,Planejado,"Caso não tenha time interno: Triangle, Toptal ou freelancer BR"
+,S0.6,Agendar kickoff com time técnico + revisar plano de 4 semanas,PM,2,Planejado,Usar este workbook como pauta
+,S0.7,"Definir evento-piloto: data, local, 10 participantes, 1 barraca",PM,3,Planejado,Sugerido: evento interno da empresa (equipe + convidados)
+,S0.8,Revisar licença AGPL-3.0 com jurídico — confirmar que fork será público,Jurídico + PM,5,Planejado,AGPL exige código aberto se acessível via rede. Confirmar estratégia de fork público vs. uso interno.
+,S0.9,Configurar repositório Git (GitHub ou Gitea self-hosted) para fork do StuStaPay,Dev Backend,1,Planejado,Estrutura: fork upstream + branch br-poc para customizações PT-BR
+,S0.10,Reservar sala/espaço físico para o dia do piloto com energia + internet,Ops,3,Planejado,"Confirmar capacidade: 1 mesa, 2 tomadas, Wi-Fi disponível"
+,S0.11,"Documentar glossário PT-BR/EN de termos cashless (pulseira, recarga, reembolso, PDV)",PM,2,Planejado,Insumo para T2.4 e T2.5 (tradução)
+,S0.12,"Definir KPIs mensuráveis no piloto: latência, taxa de erro, satisfação do operador",PM + QA,2,Planejado,Template de coleta: planilha simples ou Google Forms
+,Status editável via dropdown. Semana 0 deve ser concluída integralmente antes do início da Semana 1 (T1.1) do cronograma.,,,,

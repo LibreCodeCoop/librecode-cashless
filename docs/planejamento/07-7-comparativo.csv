@@ -1,0 +1,29 @@
+
+,Comparativo: StuStaPay vs Imply Cashless,,,,
+
+,#,Feature,StuStaPay (Open Source),Imply Cashless,Gap / Observação
+,1,PDV offline-first,Sim (SQLite local + sync ao reconectar),Sim,Paridade — StuStaPay comprovado em festivais DE.
+,2,Pulseira NFC,Sim (NTAG213/215/216),Sim (RFID próprio),Paridade — StuStaPay usa padrão aberto NXP.
+,3,Cartão NFC,Sim,Sim,Paridade.
+,4,QR code impresso,Parcial (via Pretix ou integração custom),Sim (nativo),Gap: integrar Pretix ou desenvolver gerador QR.
+,5,Recarga online (web),"Parcial (não nativo, via Pretix ou custom)",Sim (nativo),Gap: desenvolver portal de recarga web — ~1 semana.
+,6,Recarga em balcão (PDV),Sim,Sim,Paridade.
+,7,Recarga em terminal self-service,Não nativo (kiosk custom),Sim,Gap: desenvolver app kiosk Android — ~2 semanas.
+,8,Reembolso,Sim (via admin web + PDV),Sim (balcão + web + self-service),Paridade — StuStaPay cobre balcão e admin web.
+,9,Dashboard em tempo real,Sim (WebSockets),Sim,Paridade.
+,10,Relatórios pós-evento,Sim (CSV + admin web),Sim,Paridade — StuStaPay exporta CSV; dashboards customizáveis.
+,11,Gestão de estoque,Sim,Sim,Paridade.
+,12,Integração com controle de acesso,Parcial (via Pretix ticket code),Sim (nativo ElevenTickets),Gap: integrar Pretix ou desenvolvimento custom.
+,13,Integração fiscal BR (SAT/NF-e),Não (TSE alemão desativado),Sim (nativo),Gap crítico: fase 2 do projeto — ~4–8 semanas.
+,14,Idioma PT-BR,Não (EN/DE nativos),Sim,Gap: tradução essencial ~2 semanas; completa ~4 semanas.
+,15,Suporte técnico,Comunidade GitHub (~159 stars),Suporte comercial SLA,Gap: sem SLA; mitigar com interno + comunidade.
+,16,Custo de licença,"R$ 0 (AGPL-3.0, manter código aberto)",R$ $$ (contrato comercial),Vantagem StuStaPay — mas exige fork público.
+,17,Customização,Total (código aberto),Limitada (config + API),Vantagem StuStaPay.
+,18,Dados no próprio servidor,Sim (self-hosted),Não (SaaS Imply),Vantagem StuStaPay — soberania de dados.
+,19,Auditoria / compliance,Código auditável; logs Postgres,Certificações comerciais,Paridade técnica; falta certificação comercial.
+,20,Tempo até primeiro evento,4 semanas (PoC) + 4–8 sem (PT-BR + fiscal),1–2 semanas (implantação comercial),Gap: StuStaPay exige mais tempo de setup inicial.
+,21,Escala comprovada,"Festivais DE (Schlossfest, StuStaCulum)","Oktoberfest SC, Rock in Rio, Lollapalooza",Imply tem escala BR comprovada; StuStaPay escala DE.
+,22,Hardware lock-in,Nenhum (NFC padrão aberto),Parcial (tags proprietários em alguns casos),Vantagem StuStaPay.
+,23,Roadmap público,Sim (GitHub discussions + issues),Não (roadmap interno),Vantagem StuStaPay para planejamento.
+,24,Maturidade do projeto,8 anos (fork TiBillet similar),15+ anos (Imply),Imply mais maduro; StuStaPay ativo e em crescimento.
+,"Conclusão: StuStaPay cobre ~70% das features do Imply Cashless out-of-the-box. Gaps críticos para uso comercial BR: (1) integração fiscal SAT/NF-e e (2) tradução PT-BR completa. Vantagens decisivas: custo zero de licença, soberania de dados, customização total, hardware padrão aberto.",,,

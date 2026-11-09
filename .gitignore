@@ -1,0 +1,12 @@
+.local/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+backups/
+*.dump
+*.sql.gz
+.DS_Store

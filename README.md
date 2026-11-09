@@ -30,6 +30,7 @@ iniciar serviços ou acessar a rede.
 | --- | --- |
 | [docs/arquitetura.md](docs/arquitetura.md) | Arquitetura conferida e divergências dos materiais |
 | [docs/plano-poc.md](docs/plano-poc.md) | Escopo, cronograma e decisões pendentes |
+| [docs/checklist-poc-minima.md](docs/checklist-poc-minima.md) | Preparação e critérios de aceite do primeiro ensaio |
 | [docs/validacao.md](docs/validacao.md) | Cenários e critérios de aceite do piloto |
 | [docs/glossario.md](docs/glossario.md) | Vocabulário inicial PT-BR/EN |
 | [docs/planejamento](docs/planejamento) | Nove abas da planilha exportadas para CSV |
